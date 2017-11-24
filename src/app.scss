@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+  .link {
+    flex: 0 0 20%;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+  }
+}

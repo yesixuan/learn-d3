@@ -1,0 +1,16 @@
+.container{
+  background-color: #ccc;
+  
+  path{
+    fill:none;
+    stroke:steelblue;
+    stroke-width:3;
+  }
+  text{
+    fill:black;
+  }
+  .domain,.tick{
+    stroke:gray;
+    stroke-width:1;
+  }
+}
