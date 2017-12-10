@@ -23,7 +23,7 @@ export default class LineChart extends Component {
     const g = d3.select('svg').append('g').attr('transform', `translate(${this.area.margin.left}, ${this.area.margin.right})`);
     // 创建data到画布的映射（得到一个函数，将数据传入该函数就能拿到该数据的位置）
     const scale_x = d3.scaleLinear().domain([0, this.state.data.length - 1]).range([0, g_width]);
-    const scale_y = d3.scaleLinear().domain([0, d3.max(this.state.data)]).range([g_height, 0]); // 这里的range顺序要注意
+    const scale_y = d3.scaleLinear().domain([0, d3.max(this.state.data)+30]).range([g_height, 0]); // 这里的range顺序要注意，此处Y轴的domain增大了30是为了不让svg跑出视口
 
     // 画线函数，将数据传入生成线条（这里也是得到一个函数）
     const line_generator2 = d3.line()
