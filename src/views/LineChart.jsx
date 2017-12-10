@@ -6,7 +6,7 @@ export default class LineChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [1, 3, 5, 7, 8, 4, 3, 7],
+      data: [12, 3, 52, 7, 84, 4, 93, 7],
     }
     this.area = {
       width: 500,
@@ -28,7 +28,7 @@ export default class LineChart extends Component {
     // 画线函数，将数据传入生成线条（这里也是得到一个函数）
     const line_generator2 = d3.line()
       .x((d, i) => scale_x(i))
-      .y(d => scale_y(d))
+      .y(d => scale_y(d+30)) // 为让整个曲线往上偏移30数值
       .curve(d3.curveCardinal);
 
     //定义一个线性渐变
@@ -52,7 +52,7 @@ export default class LineChart extends Component {
     const line_generator = d3.area()
       .x((d, i) => scale_x(i))
       .y0(g_height)
-      .y1(d => scale_y(d))
+      .y1(d => scale_y(d+30)) // 为让整个曲线往上偏移30数值
       .curve(d3.curveCardinal);
 
     // 画线
